@@ -6,7 +6,7 @@ let LX=width;
 let LY=height;
 let R=Math.min(LX/4,LY/4)*3/2;
 let v0=700;
-let theta=PI;
+let theta=181/360*PI*2;
 
 var x=[];
 var y=[];
@@ -42,6 +42,7 @@ function draw() {
   line(-LX/2,-LY/2,-LX/2,LY/2);
   line(-LX/2,LY/2,LX/2,LY/2);
   fill(0);
+  strokeWeight(0)
   ellipse(0,0,R*2,R*2);
   for (let i=0; i<Nparticle; i++){
     var hold=[];
@@ -72,7 +73,7 @@ function draw() {
       vy[i]=(y[i]-cy[i])/sqrt((x[i]-cx[i])*(x[i]-cx[i])+(y[i]-cy[i])*(y[i]-cy[i]))*v0;
     }
     stroke(0);
-    strokeWeight(5);
+    strokeWeight(2);
     point(x[i],y[i]);
   }
   if (keycount == 0) {
